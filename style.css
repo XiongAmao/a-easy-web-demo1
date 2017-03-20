@@ -1,0 +1,182 @@
+*{
+    margin: 0; 
+}
+body{
+
+}
+
+ul,ol{
+    padding: 0;
+    list-style: none;
+}
+
+
+/* logo 模块*/
+.logo{
+
+    padding:16px 0 22px 0;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+/* logo 图 */
+.logo > .image{
+    background: #d8d8d8;
+    border-radius: 36px;
+    width: 72px;
+    height: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 44px;
+    margin-bottom: 22px;
+}
+@media (min-width:640px){
+    .logo > .image{
+        margin-bottom: 28px;
+    }
+}
+
+
+.logo > .image > img{}
+
+
+/* slogan flex 定宽 */
+.logo > .slogan{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.logo > .slogan > li{
+    background: #d8d8d8;
+    min-width: 128px;
+    line-height: 24px;
+    box-sizing: border-box;
+    margin: 12px 16px;
+}
+
+/* banner 模块 */
+.banner { 
+    background: #efefef;
+    text-align: center;
+}
+.banner >:nth-child(1){
+    padding-top: 46px;
+    padding-bottom: 36px;
+}
+.banner >:nth-child(2){
+    padding-bottom: 30px;
+    padding-top:46px;
+}
+@media (min-width:640px){
+    .banner >:nth-child(2){
+        padding-bottom: 30px;
+        padding-top:66px;
+    }
+}
+.banner >:nth-child(3){
+    padding-bottom: 50px;
+}
+
+@media (min-width:640px){
+    .banner >:nth-child(3){
+        padding-bottom: 100px;
+}
+}
+.banner  h2{
+    background: #d8d8d8;
+    border-radius: 14px;
+    min-width: 200px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 3px 0;
+    line-height: 34px;
+}
+@media (min-width:400px){
+    .banner  .short-header{
+        display: none;
+    }
+    .banner .short-header h2{
+        min-width: 0;
+    }
+}
+
+@media(max-width:399px){
+   .banner .long-header{
+    display: none;
+    } 
+}
+
+
+.banner  p{
+    background: #e8e8e8;
+    border-radius: 14px;
+    max-width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+@media (min-width:400px){
+    .banner  p{
+        min-width: 320px;
+    }
+}
+@media (min-width:640px){
+    .banner  p{
+        min-width: 536px;
+    }
+}
+
+
+/* products 模块*/
+ 
+.products{
+
+}   
+
+.products  ol {
+    padding: 42px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right:auto;
+}
+.products .product {
+    margin-bottom: 32px;
+    width:288px;
+    margin-left: 16px;
+    margin-right:16px;
+}
+.products .product > .image{
+    background:#d8d8d8;
+    min-height: 180px;
+    border-radius:4px;
+    margin-bottom: 20px;
+
+}
+
+.products .product > h3{
+    background: #bcbcbc;
+    border-radius:4px;
+    margin-bottom: 14px;
+    line-height: 24px;
+    box-sizing: border-box;
+    padding: 0px 2px;
+    max-width: 204px;
+}
+
+.products .product > p{
+    border-radius:4px;
+    background: #ececec;
+    line-height: 16px;
+    font-size: 12px;
+} 

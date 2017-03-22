@@ -146,10 +146,11 @@ ul,ol{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1000px;
+    max-width: 960px;
     margin-left: auto;
     margin-right:auto;
 }
+/* 对设计稿的理解是一个个定宽的小盒子，后续应该修成自适应缩放的盒子 */
 .products .product {
     margin-bottom: 32px;
     width:288px;
@@ -184,7 +185,7 @@ ul,ol{
 .products .product.hidden {
     display: none;
 }
-@media (min-width:1000px){
+@media (min-width:960px){
     .products .product.hidden {
         display: block;
     }

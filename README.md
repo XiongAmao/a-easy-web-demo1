@@ -1,5 +1,6 @@
-# a-easy-web-demo1
+# simple page demo
 点击进入->[一个简单的自适应页面](https://xiongamao.github.io/a-easy-web-demo1/index.html)
+
 目前只有简单样式
 
 ## TODO LIST

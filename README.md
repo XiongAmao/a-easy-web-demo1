@@ -1,6 +1,6 @@
 # simple page demo
 - 项目一：[一个简单的自适应页面demo](https://xiongamao.github.io/a-easy-web-demo1/index.html)
-- 项目二：[简单的导航栏（仿多玩首页）](https://xiongamao.github.io/a-easy-web-demo1/nav-demo/site_navigation.html)
+- 项目二：[简单的导航栏（仿多玩首页）](https://xiongamao.github.io/a-easy-web-demo1/nav-demo/navigation.html)
 
 
 ## TODO LIST

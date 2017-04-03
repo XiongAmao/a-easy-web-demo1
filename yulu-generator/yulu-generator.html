@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="填空demo" />
+    <meta charset="utf-8">
+    <title>JS Bin</title>
+    <link rel="stylesheet" href="./yulu.css">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <h1>默写常见的名句名篇</h1>
+        </header>
+        <div class="page">
+
+            <section class="preview" id="preview">
+
+                <ol>
+                    <li>看万山红遍，层林尽染； <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>,<span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。</li>
+                    <li>鹰击长空，鱼翔浅底，<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。</li>
+                    <li>携来百侣曾游， <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。
+                        恰同学少年，风华正茂；书生意气，
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。指点江山，激扬文字，<span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。
+                        曾记否，到中流击水，
+                        <span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>？</li>
+                    <li><span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>，以望复关。不见复关，<span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。既见复关，<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。</li>
+                </ol>
+
+
+            </section>
+
+            <section class="editor">
+                <h4>回答：</h4>
+                <ol>
+                    <li>
+                        <input type="text" placeholder="第一个空" id="word1">
+                        <input type="text" placeholder="第二个空" id="word2">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="第一个空" id="word3">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="第一个空" id="word4">
+                        <input type="text" placeholder="第二个空" id="word5">
+                        <input type="text" placeholder="第三个空" id="word6">
+                        <input type="text" placeholder="第四个空" id="word7">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="第一个空" id="word8">
+                        <input type="text" placeholder="第二个空" id="word9">
+                        <input type="text" placeholder="第三个空" id="word10">
+                    </li>
+
+                </ol>
+                <button id="generate">回答</button>
+            </section>
+        </div>
+
+    </div>
+    <script>
+        generate.onclick = function () {
+            var words = []
+            words.push(word1.value)
+            words.push(word2.value)
+            words.push(word3.value)
+            words.push(word4.value)
+            words.push(word5.value)
+            words.push(word6.value)
+            words.push(word7.value)
+            words.push(word8.value)
+            words.push(word9.value)
+            words.push(word10.value)
+
+            //   place1.innerText = w1
+            //   place2.innerText = w2
+            //   place3.innerText = w3
+            //   place4.innerText = w4
+
+            var html = `<ol>
+          <li>看万山红遍，层林尽染； <span>${words[0]}</span>,<span>	${words[1]}</span>。</li>
+          <li>鹰击长空，鱼翔浅底， <span>${words[2]}</span>。</li>
+          <li>携来百侣曾游， <span>${words[3]}</span>。  恰同学少年，风华正茂；书生意气，<span> ${words[4]}</span>。指点江山，激扬文字， <span>	${words[5]}</span>。 
+曾记否，到中流击水， <span>${words[6]}</span>？</li>
+          <li><span>${words[7]}</span>，以望复关。不见复关，<span>	${words[8]}</span>。既见复关，<span> ${words[9]}</span>。</li>
+        </ol>`
+            preview.innerHTML = html
+            // ` 号使用模板字符串
+
+
+        }
+
+        console.log(document.querySelectorAll('.preview>p'))
+    </script>
+</body>
+
+</html>

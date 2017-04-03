@@ -1,0 +1,49 @@
+*{
+  margin:0px;padding:0px;box-sizing:border-box;
+}
+body{
+  background: #eee;
+}
+.main{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  padding:16px;
+  width:600px;
+  border:#BFBFBF 1px solid;
+  background: #fff;
+  box-shadow: -0.5px 1px 1px #888888;
+}
+header > h1 {
+  text-align: center;
+}
+
+
+ol >li{
+  margin:1em 0;
+}
+.page{
+  line-height: 2em;
+  padding:1em;
+}
+
+
+/* eidtor */
+.page .editor{
+  margin-top:2em;
+  margin-right:3em;
+}
+.editor > h4{
+  margin-left:-1em
+}
+
+input{
+  width:8em;
+}
+#generate{
+  width:6em;
+}
+span{
+ 
+  border-bottom:1px solid black
+}

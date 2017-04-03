@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+        
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function assert(value, description) {
+            description = description || ''
+            if (value) {
+                var div = document.createElement('div')
+                div.innerText = '[TEST PASS]' + description
+                div.className = 'success'
+                document.body.appendChild(div)
+                console.info('[TEST PASS]' + description)
+            } else {
+                var div = document.createElement('div')
+                div.innerText = '[TEST FAILED]' + description
+                div.className = 'error'
+                document.body.appendChild(div)
+                console.error('[TEST FAILED]' + description)
+            }
+        }
+        function creatediv(innerText) {
+            var div = document.createElement('div')
+            div.innerText = innerText
+            div.className = 'start'
+            document.body.appendChild(div)
+            console.log('-------' + innerText + '-------')
+        }
+        // Object.prototype.valueOf()
+        creatediv('Object.prototype.valueOf()的断言:')
+        var va = { 'a': 123, }
+        var vb = { 1: 1 }
+        var vc = 1
+        var valueOfa = va.valueOf()
+        var valueOfb = vb.valueOf()
+        var valueOfc = vc.valueOf()
+
+        assert(valueOfa === va, 'valueOf返回对象本身')
+        assert(valueOfc === 1, 'valueOf返回对象的值')
+
+        var vd = { 1: 1 }
+        var valueOfd = vd.valueOf()
+        assert(vb !== vd, '两个值相同的对象不相等')
+        assert(valueOfb !== valueOfd, '两个值相同的不同对象，valueOf 的值不相等')
+
+        // Object.prototype.toString()
+        creatediv('Object.prototype.toString()的断言:')
+
+        var sa = { 'a': 123, 'b': 456 }
+        var sb = { 1: 1 }
+        var sc = [1, 2]
+        var sd = function () {return 123}
+        var se = {}
+
+        var resultsa = sa.toString()
+        var resultsb = sb.toString()
+        var resultsc = sc.toString()
+        var resultsd = sd.toString()
+
+        se.toString = function () {
+            return 'hello'
+        }
+
+        assert(typeof (resultsa) === "string", "toString()返回的结果是一个字符串")
+        assert(resultsb === "[object Object]", '对象toString()返回的结果是"{object Object}"')
+        assert(resultsc === "1,2", "数组toString()返回的结果是数组里面的值的字符串,而不是[object Object]")
+        assert(resultsd === "function () {return 123}", "函数toString()返回的结果是函数完整代码的字符串,而不是[object Object]")
+        assert((se + ' world') === "hello world", "对象类型转换时会调用toString方法")
+
+        // Number.prototype.toFixed()
+        creatediv('Number.prototype.toFixed()的断言:')
+
+        var fa = 10
+        var fb = 10.001
+        var fc = 10.005
+
+        var resultfa = fa.toFixed(2)
+        var resultfaa = fa.toFixed(4)
+        var resultfb = fb.toFixed(2)
+        var resultfc = fc.toFixed(2)
+
+        assert(typeof resultfa === "string", "数toFixed()返回的是一个字符串")
+        assert((resultfa === "10.00" && resultfaa === "10.0000"), "返回的是对应的数的小数，且参数为小数数位")
+        assert(resultfb === "10.00", "小数如果超位数，会按参数位数保留")
+        assert((resultfc === "10.01") && resultfb === "10.00", "小数如果超位数，会按参数位数保留，且在一定情况下会四舍五入（不完全确认）")
+        assert((-1).toFixed(2) === '-1.00', '负数也会转化')
+
+
+        // string 部分
+        var sta = "Frank is awesome!"
+
+        // substr()
+        creatediv('下面是substr()的断言:')
+
+
+        assert(typeof sta.substr(3) === "string", "输出的字符串")
+        assert(sta.substr(3) === "nk is awesome!", "第一个参数为开始位置，当第二个参数省略时，从左第一个开始位置开始向右取到字符串结束")
+        assert((sta.substr(3, 2) === "nk") && (sta.substr(3, 4) === "nk i"), "结合上一个断言，第二参数为取的字符个数")
+        assert(sta.substr(-2) === "e!", "第一个参数为负时，表示倒数计算的位置，但顺序依然是从左向右")
+        assert(sta.substr(4, -2) === "", "第二个参数为负数时，会返回空字符串")
+
+        // substr()
+        creatediv('下面是substring()的断言:')
+
+        assert(sta.substring(2, 4) === "an", "第一个参数为开始位置，第二个参数为结束位置")
+        assert(sta.substring(0, 1) === "F", "第一个参数从0开始，第二个参数从1开始的位置")
+        assert(sta.substring(6) === "is awesome!", "省略第二个参数，则返回的字符串从第一个参数位置到末尾")
+        assert(sta.substring(4, 2) === sta.substring(2, 4), "第一个参数大于第二个,会自动更换两个参数位置")
+        assert(sta.substring(-4) === sta, "负数参数会转为0，如果只有为0的参数则转为原字符串")
+        assert(sta.substring(-4, 3) === sta.substring(0, 3) && sta.substring(-4, -2) === sta.substring(-2, -4), "所有为负的参数会先转为0，再比较大小，看是否对换位置")
+
+
+        //indexOf()
+        creatediv('下面是indexOf()的断言:')
+
+
+        assert(sta.indexOf('an') === 2 && sta.indexOf('nk ') === 3, "indexOf从字符串头开始匹配，匹配到的字符串的第一个字符的位置")
+        assert(sta.indexOf('alibaba') === -1, "如果没有匹配到则返回-1")
+        assert(sta.indexOf('a', 6) === 9 && sta.indexOf('a', 2) === 2, "第二个参数表示开始的位置")
+
+        // Array 部分
+
+        var Arraya = [5, 2, 4, 3]
+        var Arrayb = [10111, 1101, 111]
+
+        // Array.prototype.sort()
+        creatediv('Array.prototype.sort() 的断言:')
+        assert(Arraya.sort() === Arraya, "排序后原数组也改变")
+        assert(Arrayb.sort().join() === '10111,1101,111', "排序转为字符串，再按字典顺序排")
+        //console.assert( a.sort((prev, next)=> prev - next).join(',') ===  '1,2,3,4,5') // 超纲
+        //console.assert( a.sort((prev, next)=> next - prev).join(',') ===  '5,4,3,2,1') // 超纲
+
+
+        // Array.prototype.push()
+        creatediv('Array.prototype.push() 的断言:')
+        var Arrayc = []
+        assert(Arrayc.push(1) === Arrayc.length && Arrayc.push('a') === Arrayc.length, "push()方法会添加一个元素，并返回当前这个数组的长度")
+        assert(Arrayc.join() === '1,a', "push()后，原数组会被改变")
+
+
+        // Array.prototype.shift()
+        creatediv('Array.prototype.shift() 的断言:')
+        Arrayc.push('b'); Arrayc.push('c'); Arrayc.push('d')
+
+        assert(Arrayc.shift() === 1, "shift()会删掉数组的第一个元素并返回该元素")
+        assert(Arrayc.join() === "a,b,c,d", "shift()会删除数组第一个元素")
+
+
+        //Array.prototype.unshift()
+        creatediv('Array.prototype.unshift() 的断言:')
+        var temp = 1
+        assert(Arrayc.unshift(temp) === Arrayc.length && Arrayc[0] === temp, "unshift()会给数组头部添加一个元素，并返回该数组长度")
+        var Arrayd = []
+        assert(Arrayd.unshift(1, 2, 3, 4) === 4 && Arrayd.join() === '1,2,3,4', 'unshift()可以添加多个元素')
+    </script>
+</body>
+
+</html>

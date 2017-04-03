@@ -1,14 +1,14 @@
 # simple page demo
-- 项目一：[一个简单的自适应页面demo](https://xiongamao.github.io/a-easy-web-demo1/index.html)
-- 项目二：[简单的导航栏（仿多玩首页）](https://xiongamao.github.io/a-easy-web-demo1/nav-demo/navigation.html)
-
+- demo-01：[一个简单的自适应页面demo](https://xiongamao.github.io/a-easy-web-demo1/index.html)
+- demo-02：[简单的导航栏（仿多玩首页）](https://xiongamao.github.io/a-easy-web-demo1/nav-demo/navigation.html)
+- demo-03：[诗词填空题](https://xiongamao.github.io/a-easy-web-demo1/yulu-generator/yulu-generator.html)
 
 ## TODO LIST
-1. 项目一[简单的自适应页面demo]
+1. demo-01[简单的自适应页面demo]
     - 为<img>添加图片源
     - 图片成比例缩放
     - 页面缩放动画应用
-2. 项目二[简单的导航栏（仿多玩首页）]
+2. demo-02[简单的导航栏（仿多玩首页）]
     - 迷之bug：jsbin 会割裂情况，但是正常浏览器没有
     - 修复选中后border撑宽整个框体的bug
     - 修复 1px 割裂的问题

@@ -18,11 +18,14 @@ startButton.addEventListener('click',function(){
     var second = parseInt(total - hour*3600 - day*86400 - minute*60)
     
     var tempDays = day < 10 ? '0' + day : day
+    var tempHours = hour < 10 ? '0' + hour : hour
+    var tempMinutes = minute < 10 ? '0' + minute : minute
+    var tempSeconds = second < 10 ? '0' + second : second
 
     days.innerText = tempDays
-    hours.innerText = hour
-    minutes.innerText = minute
-    seconds.innerText = second
+    hours.innerText = tempHours
+    minutes.innerText = tempMinutes
+    seconds.innerText = tempSeconds
         
     },1000)
 })

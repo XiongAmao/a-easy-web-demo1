@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron:700');
+@import url('https://fonts.css.network/css?family=Share+Tech+Mono');
 *{
     margin:0;
     padding:0;
@@ -16,22 +16,20 @@ body{
     width:100%;
 }
 
-
 .deal-box {
-    border:1px solid red;
+    /*border:1px solid red;*/
     width:300px;
     height:400px;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    background: #ddd;
+    /*background: #ddd;*/
     margin-left:auto;
     margin-right:auto;
     margin-top:30px;
+    box-shadow: 0.5px 1px 10px grey;
 }
-
-
 
 /* setting */
 
@@ -39,26 +37,151 @@ body{
     height:130px;
     /* border:solid blue 1px; */
     width:100%;
-    background:#FFFFFF;
+    /*background:#FFFFFF;*/
+    /*background: #dcdcdc;*/
+
+}
+.setting > div:nth-child(1){
+    background: #333D46;
+    height: 40px;
+    color: #C2C5C8;
+    width: 260px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    padding:0.75em 0.6em 0.6em 2em;
+    border-radius: 3px;
+    font-size: 15px;
 }
 
+
+/* button */
+.setting > div:nth-child(2){
+    padding-left:24px; 
+    padding-right: 40px;    
+    font-family: monospace; 
+    display:flex;
+    justify-content: space-between
+}
+
+
+
+.setting > div:nth-child(2)  div{
+    /*display: inline-block*/
+}
+
+.setting > div:nth-child(2)  .button{
+    display: inline-block;    
+    width:32px;
+    height:20px;
+    text-align: center;
+    background: white;
+    cursor:pointer;
+}
+
+.setting > div:nth-child(2)  .button:nth-child(1){
+    border-radius: 3px 0 0 3px;
+    color:#333D46;
+    border-left: 2px solid #C2C5C8;
+    border-right: 1px solid #C2C5C8;
+    border-top: 2px solid #C2C5C8;
+    border-bottom: 2px solid #C2C5C8;
+}
+.setting > div:nth-child(2)  .button:nth-child(1):hover,
+.setting > div:nth-child(2)  .button:nth-child(2):hover{
+    transition-duration: 0.5s;
+    outline: none;
+}
+.setting > div:nth-child(2)  .button:nth-child(1):active,
+.setting > div:nth-child(2)  .button:nth-child(2):active{
+    outline: none;   
+
+}    
+.setting > div:nth-child(2)  .button:nth-child(1):hover{
+    border-left: 2px solid #333D46;
+    border-right: 1px solid #333D46;
+    border-top: 2px solid #333D46;
+    border-bottom: 2px solid #333D46;
+}
+.setting > div:nth-child(2)  .button:nth-child(2){
+    border-left: 1px solid #C2C5C8;
+    border-right: 2px solid #C2C5C8;
+    border-top: 2px solid #C2C5C8;
+    border-bottom: 2px solid #C2C5C8;
+    border-radius: 0 3px 3px 0;
+    color:#0CC2AA;
+}
+.setting > div:nth-child(2)  .button:nth-child(2):hover{
+    border-left: 1px solid #0CC2AA;
+    border-right: 2px solid #0CC2AA;
+    border-top: 2px solid #0CC2AA;
+    border-bottom: 2px solid #0CC2AA;
+    color:#0CC2AA;
+}
+
+/* 还缺active 样式*/
 
 /* timer */
 
 .timer{
     height:140px;
-    background:#FCFCFC;
+    background: #EFF1F3;
+    /*background: #dcdcdc;*/
     width:100%;
     /* border:solid yellow 1px; */
+    padding:20px;
+    text-align: center;
 }
+.time-figure{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 38px;
 
+}
+.time-figure > span{
+    font-family: 'Share Tech Mono', monospace;
+}
+.time-abbr{
+    font-size: 18px;
+}
+.time-abbr > span:nth-child(2) {
+    margin-left:2em;
+    margin-right: 1em;
+}
+.time-abbr > span:nth-child(3) {
+    margin-left: 1em;
+    margin-right: 2em;
+}
+/*.time-abbr > span:nth-child(1n+2) {
+    margin: 0 0.85em;
+}*/
 
 /* price */
 
 
-.price{
+.price-box{
     height:130px;
     width:100%;
     /* border:1px solid green; */
     background:#FFFFFF;
+    padding:22px 26px;
+}
+.price-box > div{
+    display: flex;
+    justify-content: space-between;
+    color: #0CC2AA;
+    font-family: monospace;
+    font-size: 16px;
+}
+.regular-price >span ,.spot-price >span{
+    color:black
+}
+.regular-price >span{
+    text-decoration: line-through;
+}
+
+#start{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
